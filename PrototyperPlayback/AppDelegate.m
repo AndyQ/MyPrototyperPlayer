@@ -7,8 +7,37 @@
 //
 
 #import "AppDelegate.h"
+#import "Project.h"
+#import "Constants.h"
+
+#import "SSZipArchive.h"
 
 @implementation AppDelegate
+
+
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication
+        annotation:(id)annotation
+{
+    if (url != nil && [url isFileURL])
+    {
+        [Project importProjectArchiveFromURL:url];
+        
+        // Remove all stored files in Inbox folder
+        NSFileManager *fm = [NSFileManager defaultManager];
+        NSURL *docsUrl = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
+                                                                 inDomains:NSUserDomainMask] lastObject];
+        NSString *path = [docsUrl.path stringByAppendingPathComponent:@"Inbox"];
+        NSArray *files = [fm contentsOfDirectoryAtPath:path error:nil];
+        for ( NSString *file in files )
+        {
+            [fm removeItemAtPath:[path stringByAppendingPathComponent:file] error:nil];
+        }
+        
+        // Post notification to update files
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIF_IMPORTED object:self];
+    }
+    return YES;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
