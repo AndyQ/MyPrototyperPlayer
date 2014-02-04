@@ -79,14 +79,6 @@
 {
 }
 
-- (IBAction) addProjectPressed:(id)sender
-{
-    // prompt for name
-    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Enter project name" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-    av.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [av show];
-}
-
 -( IBAction) actionPressed:(id)sender
 {
     NSArray *items = @[@"Delete projects", @"Settings"];

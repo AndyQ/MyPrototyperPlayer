@@ -4,16 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-ColorPopover.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-ELCImagePickerController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-InAppSettingsKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,11 +19,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-WEPopover.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>066045903FDF4B2B9CB29D2C</key>
+		<key>7882A1E1F8E64CCEA7D4221F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1D7BF251458F4ACFAE162DED</key>
+		<key>C8BACB482530450381B3D596</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>204215D9FA90432CA525E9DC</key>
+		<key>DD5B5C1327BD458D8680B57C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3F73FF2C1866497A83262022</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>84116F4209F549C686D0358C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BE15EF5749A54AC2A53A7504</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C34911C2DA5042D7932E1F5B</key>
+		<key>E230E190693143A0BAAFF4C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
