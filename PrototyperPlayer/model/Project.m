@@ -92,9 +92,9 @@
     if ( valid )
     {
         // There may already be an old zip file in this location (there shouldn't be but just in case)
-        // so we remove it first as the move will fail if one does exist.
+        // so we remove it first as the copy will fail if one does exist.
         [fm removeItemAtPath:file error:nil];
-        [fm moveItemAtURL:url toURL:[NSURL fileURLWithPath:file] error:&error];
+        [fm copyItemAtURL:url toURL:[NSURL fileURLWithPath:file] error:&error];
         if ( error != nil )
         {
             NSLog( @"Error - %@", error.localizedDescription );

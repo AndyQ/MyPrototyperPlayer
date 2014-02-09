@@ -31,6 +31,7 @@
 		A14C9464189FE63D008F6A0D /* UIColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A14C9463189FE63D008F6A0D /* UIColor+Utils.m */; };
 		A14C9467189FE649008F6A0D /* UIImageView+ContentScale.m in Sources */ = {isa = PBXBuildFile; fileRef = A14C9466189FE649008F6A0D /* UIImageView+ContentScale.m */; };
 		A14C946918A14235008F6A0D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A14C946818A14235008F6A0D /* Settings.bundle */; };
+		A1CC97C518A813D800816C03 /* demo.zip in Resources */ = {isa = PBXBuildFile; fileRef = A1CC97C418A813D800816C03 /* demo.zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		A14C9465189FE649008F6A0D /* UIImageView+ContentScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ContentScale.h"; sourceTree = "<group>"; };
 		A14C9466189FE649008F6A0D /* UIImageView+ContentScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ContentScale.m"; sourceTree = "<group>"; };
 		A14C946818A14235008F6A0D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = SOURCE_ROOT; };
+		A1CC97C418A813D800816C03 /* demo.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = demo.zip; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 		A14C9417189FE278008F6A0D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A1CC97C418A813D800816C03 /* demo.zip */,
 				A14C946818A14235008F6A0D /* Settings.bundle */,
 				A14C9418189FE278008F6A0D /* PrototyperPlayer-Info.plist */,
 				A14C9419189FE278008F6A0D /* InfoPlist.strings */,
@@ -315,6 +318,7 @@
 			files = (
 				A14C9427189FE278008F6A0D /* Main_iPad.storyboard in Resources */,
 				A14C942C189FE278008F6A0D /* Images.xcassets in Resources */,
+				A1CC97C518A813D800816C03 /* demo.zip in Resources */,
 				A14C946918A14235008F6A0D /* Settings.bundle in Resources */,
 				A14C9424189FE278008F6A0D /* Main_iPhone.storyboard in Resources */,
 				A14C941B189FE278008F6A0D /* InfoPlist.strings in Resources */,

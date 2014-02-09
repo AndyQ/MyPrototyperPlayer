@@ -79,6 +79,13 @@
 {
 }
 
+
+
+-( IBAction) addProjectPressed:(id)sender
+{
+    
+}
+
 -( IBAction) actionPressed:(id)sender
 {
     NSArray *items = @[@"Delete projects", @"Settings"];
@@ -172,10 +179,8 @@
         BOOL isDir = NO;
         if (![file hasPrefix:@"."] && [fm fileExistsAtPath:path isDirectory:&isDir] && isDir)
         {
-//            ProjectType projectType = [Project getProjectTypeForProject:file];
             Project *p = [[Project alloc] init];
             p.projectName = file;
-//            p.projectType = projectType;
             [projects addObject:p];
         }
     }
