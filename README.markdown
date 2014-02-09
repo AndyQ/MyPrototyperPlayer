@@ -16,7 +16,6 @@ A sample project.json file is shown below:
 ### Sample project.json
 ```
 {
-  "projectName" : "demo",
   "startImage" : "Image1",
   "images" : [
     {
@@ -46,7 +45,6 @@ A sample project.json file is shown below:
 ### project.json format
 - Note all image names are without extension as the app first tries to load a .jpg and then a .png if the jpg doesn't exist.
 
-projectName - The name of the project (should be same name as zip file - used as part of validation)
 startImage - The image name that is the start image when playback selected
 images - A list of ImageDetail objects that describe an image and its defined links (hotspots)
 

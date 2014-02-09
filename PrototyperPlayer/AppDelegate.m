@@ -41,7 +41,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ( [defaults objectForKey:@"FirstUse"] == nil )
     {
@@ -51,7 +50,6 @@
         NSURL *url = [[NSBundle mainBundle] URLForResource:@"demo" withExtension:@"zip"];
         [Project importProjectArchiveFromURL:url];
     }
-    
     
     return YES;
 }

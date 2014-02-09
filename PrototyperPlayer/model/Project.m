@@ -60,7 +60,7 @@
     // Check that this JSON object contains a valid project name (may also want to add version number check
     // when version numbers get implemented)
     NSDictionary *dict = jsonObj;
-    if ( dict[@"projectName"] == nil )
+    if ( dict[@"startImage"] == nil )
         return NO;
     
     return YES;
@@ -424,7 +424,6 @@
     }
     
     NSDictionary *dict = jsonObj;
-    self.projectName = dict[@"projectName"];
     self.startImage = dict[@"startImage"];
     for ( NSDictionary *d in dict[@"images"] )
     {
@@ -438,7 +437,6 @@
 - (bool) save:(NSError **)error
 {
     NSMutableDictionary *proj = [NSMutableDictionary dictionary];
-    proj[@"projectName"] = self.projectName;
     proj[@"startImage"] = self.startImage;
     NSMutableArray *images = [NSMutableArray array];
     proj[@"images"] = images;
