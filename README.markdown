@@ -1,4 +1,4 @@
-#Prototyper#Playback
+#PrototyperPlayback
 
 PrototyperPlayback is the player only companian app for running interfaces created with Prototyper. This app is designed to demo the playback only component and has no editor functionality.
 
