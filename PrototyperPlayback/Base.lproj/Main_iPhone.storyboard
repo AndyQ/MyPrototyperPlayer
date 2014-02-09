@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5037.3" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="h32-N3-aNH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5051" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="h32-N3-aNH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -33,8 +33,8 @@
                             <constraint firstItem="Omh-Wu-vXJ" firstAttribute="leading" secondItem="TdY-Re-NJH" secondAttribute="leading" id="AWy-Ej-IMM"/>
                             <constraint firstAttribute="centerY" secondItem="j4r-tP-dEp" secondAttribute="centerY" id="Fqv-S0-9hs"/>
                             <constraint firstAttribute="centerX" secondItem="j4r-tP-dEp" secondAttribute="centerX" id="IJu-M7-da3"/>
-                            <constraint firstItem="Gq9-KO-BpK" firstAttribute="top" secondItem="Omh-Wu-vXJ" secondAttribute="bottom" id="Vmu-JP-oLJ"/>
-                            <constraint firstItem="Omh-Wu-vXJ" firstAttribute="top" secondItem="EGd-bX-Ru7" secondAttribute="bottom" id="tbp-h3-jfP"/>
+                            <constraint firstItem="Omh-Wu-vXJ" firstAttribute="top" secondItem="EGd-bX-Ru7" secondAttribute="bottom" id="PB7-Hf-gOA"/>
+                            <constraint firstItem="Gq9-KO-BpK" firstAttribute="top" secondItem="Omh-Wu-vXJ" secondAttribute="bottom" id="hec-yH-Dc1"/>
                             <constraint firstAttribute="trailing" secondItem="Omh-Wu-vXJ" secondAttribute="trailing" id="xdk-X0-2U0"/>
                         </constraints>
                     </view>
@@ -53,10 +53,8 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="bottomConstraint" destination="Vmu-JP-oLJ" id="1mp-4v-FGd"/>
                         <outlet property="doubleTapText" destination="j4r-tP-dEp" id="ytq-gn-ljm"/>
                         <outlet property="imageView" destination="Omh-Wu-vXJ" id="gAe-76-3Ub"/>
-                        <outlet property="topConstraint" destination="tbp-h3-jfP" id="KNK-62-q5P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dyh-RT-ju3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -110,10 +108,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pSw-hp-ttA" firstAttribute="top" secondItem="dLf-lv-MVA" secondAttribute="bottom" id="L0b-be-BGi"/>
+                            <constraint firstItem="pSw-hp-ttA" firstAttribute="top" secondItem="dLf-lv-MVA" secondAttribute="bottom" id="I1Z-vR-i15"/>
                             <constraint firstItem="dLf-lv-MVA" firstAttribute="leading" secondItem="io7-ph-GEY" secondAttribute="leading" id="YeB-Ta-VRc"/>
                             <constraint firstAttribute="trailing" secondItem="dLf-lv-MVA" secondAttribute="trailing" id="l2J-kl-tw3"/>
-                            <constraint firstItem="dLf-lv-MVA" firstAttribute="top" secondItem="2D5-d3-VfK" secondAttribute="bottom" id="pv8-c0-wWm"/>
+                            <constraint firstItem="dLf-lv-MVA" firstAttribute="top" secondItem="2D5-d3-VfK" secondAttribute="bottom" id="x7n-lm-xER"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
