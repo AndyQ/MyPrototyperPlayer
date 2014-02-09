@@ -21,7 +21,7 @@
 		A14C9434189FE278008F6A0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14C9410189FE278008F6A0D /* Foundation.framework */; };
 		A14C9435189FE278008F6A0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14C9414189FE278008F6A0D /* UIKit.framework */; };
 		A14C943D189FE278008F6A0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A14C943B189FE278008F6A0D /* InfoPlist.strings */; };
-		A14C943F189FE278008F6A0D /* PrototyperPlaybackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A14C943E189FE278008F6A0D /* PrototyperPlaybackTests.m */; };
+		A14C943F189FE278008F6A0D /* PrototyperPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A14C943E189FE278008F6A0D /* PrototyperPlayerTests.m */; };
 		A14C9454189FE3A7008F6A0D /* ImageDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A14C944C189FE3A7008F6A0D /* ImageDetails.m */; };
 		A14C9455189FE3A7008F6A0D /* ImageLink.m in Sources */ = {isa = PBXBuildFile; fileRef = A14C944E189FE3A7008F6A0D /* ImageLink.m */; };
 		A14C9456189FE3A7008F6A0D /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = A14C9450189FE3A7008F6A0D /* Project.m */; };
@@ -46,24 +46,24 @@
 /* Begin PBXFileReference section */
 		21FBA33CC0164B4CA066B576 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7758088FE73F4464AE08E16A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		A14C940D189FE278008F6A0D /* PrototyperPlayback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrototyperPlayback.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A14C940D189FE278008F6A0D /* PrototyperPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrototyperPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14C9410189FE278008F6A0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A14C9412189FE278008F6A0D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A14C9414189FE278008F6A0D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		A14C9418189FE278008F6A0D /* PrototyperPlayback-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrototyperPlayback-Info.plist"; sourceTree = "<group>"; };
+		A14C9418189FE278008F6A0D /* PrototyperPlayer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrototyperPlayer-Info.plist"; sourceTree = "<group>"; };
 		A14C941A189FE278008F6A0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A14C941C189FE278008F6A0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A14C941E189FE278008F6A0D /* PrototyperPlayback-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrototyperPlayback-Prefix.pch"; sourceTree = "<group>"; };
+		A14C941E189FE278008F6A0D /* PrototyperPlayer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrototyperPlayer-Prefix.pch"; sourceTree = "<group>"; };
 		A14C941F189FE278008F6A0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A14C9420189FE278008F6A0D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A14C9423189FE278008F6A0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		A14C9426189FE278008F6A0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		A14C942B189FE278008F6A0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A14C9431189FE278008F6A0D /* PrototyperPlaybackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrototyperPlaybackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A14C9431189FE278008F6A0D /* PrototyperPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrototyperPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14C9432189FE278008F6A0D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		A14C943A189FE278008F6A0D /* PrototyperPlaybackTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrototyperPlaybackTests-Info.plist"; sourceTree = "<group>"; };
+		A14C943A189FE278008F6A0D /* PrototyperPlayerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrototyperPlayerTests-Info.plist"; sourceTree = "<group>"; };
 		A14C943C189FE278008F6A0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A14C943E189FE278008F6A0D /* PrototyperPlaybackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrototyperPlaybackTests.m; sourceTree = "<group>"; };
+		A14C943E189FE278008F6A0D /* PrototyperPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrototyperPlayerTests.m; sourceTree = "<group>"; };
 		A14C9448189FE2AB008F6A0D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		A14C944B189FE3A7008F6A0D /* ImageDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDetails.h; sourceTree = "<group>"; };
 		A14C944C189FE3A7008F6A0D /* ImageDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDetails.m; sourceTree = "<group>"; };
@@ -112,8 +112,8 @@
 		A14C9404189FE278008F6A0D = {
 			isa = PBXGroup;
 			children = (
-				A14C9416189FE278008F6A0D /* PrototyperPlayback */,
-				A14C9438189FE278008F6A0D /* PrototyperPlaybackTests */,
+				A14C9416189FE278008F6A0D /* PrototyperPlayer */,
+				A14C9438189FE278008F6A0D /* PrototyperPlayerTests */,
 				A14C940F189FE278008F6A0D /* Frameworks */,
 				A14C940E189FE278008F6A0D /* Products */,
 				7758088FE73F4464AE08E16A /* Pods.xcconfig */,
@@ -123,8 +123,8 @@
 		A14C940E189FE278008F6A0D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A14C940D189FE278008F6A0D /* PrototyperPlayback.app */,
-				A14C9431189FE278008F6A0D /* PrototyperPlaybackTests.xctest */,
+				A14C940D189FE278008F6A0D /* PrototyperPlayer.app */,
+				A14C9431189FE278008F6A0D /* PrototyperPlayerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,7 +141,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A14C9416189FE278008F6A0D /* PrototyperPlayback */ = {
+		A14C9416189FE278008F6A0D /* PrototyperPlayer */ = {
 			isa = PBXGroup;
 			children = (
 				A14C9449189FE3A7008F6A0D /* cells */,
@@ -156,34 +156,34 @@
 				A14C942B189FE278008F6A0D /* Images.xcassets */,
 				A14C9417189FE278008F6A0D /* Supporting Files */,
 			);
-			path = PrototyperPlayback;
+			path = PrototyperPlayer;
 			sourceTree = "<group>";
 		};
 		A14C9417189FE278008F6A0D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				A14C946818A14235008F6A0D /* Settings.bundle */,
-				A14C9418189FE278008F6A0D /* PrototyperPlayback-Info.plist */,
+				A14C9418189FE278008F6A0D /* PrototyperPlayer-Info.plist */,
 				A14C9419189FE278008F6A0D /* InfoPlist.strings */,
 				A14C941C189FE278008F6A0D /* main.m */,
-				A14C941E189FE278008F6A0D /* PrototyperPlayback-Prefix.pch */,
+				A14C941E189FE278008F6A0D /* PrototyperPlayer-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A14C9438189FE278008F6A0D /* PrototyperPlaybackTests */ = {
+		A14C9438189FE278008F6A0D /* PrototyperPlayerTests */ = {
 			isa = PBXGroup;
 			children = (
-				A14C943E189FE278008F6A0D /* PrototyperPlaybackTests.m */,
+				A14C943E189FE278008F6A0D /* PrototyperPlayerTests.m */,
 				A14C9439189FE278008F6A0D /* Supporting Files */,
 			);
-			path = PrototyperPlaybackTests;
+			path = PrototyperPlayerTests;
 			sourceTree = "<group>";
 		};
 		A14C9439189FE278008F6A0D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A14C943A189FE278008F6A0D /* PrototyperPlaybackTests-Info.plist */,
+				A14C943A189FE278008F6A0D /* PrototyperPlayerTests-Info.plist */,
 				A14C943B189FE278008F6A0D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -237,9 +237,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A14C940C189FE278008F6A0D /* PrototyperPlayback */ = {
+		A14C940C189FE278008F6A0D /* PrototyperPlayer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A14C9442189FE278008F6A0D /* Build configuration list for PBXNativeTarget "PrototyperPlayback" */;
+			buildConfigurationList = A14C9442189FE278008F6A0D /* Build configuration list for PBXNativeTarget "PrototyperPlayer" */;
 			buildPhases = (
 				91957DFB361D45BD9AA757CB /* Check Pods Manifest.lock */,
 				A14C946A18A14292008F6A0D /* ShellScript */,
@@ -252,14 +252,14 @@
 			);
 			dependencies = (
 			);
-			name = PrototyperPlayback;
+			name = PrototyperPlayer;
 			productName = PrototyperPlayback;
-			productReference = A14C940D189FE278008F6A0D /* PrototyperPlayback.app */;
+			productReference = A14C940D189FE278008F6A0D /* PrototyperPlayer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A14C9430189FE278008F6A0D /* PrototyperPlaybackTests */ = {
+		A14C9430189FE278008F6A0D /* PrototyperPlayerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A14C9445189FE278008F6A0D /* Build configuration list for PBXNativeTarget "PrototyperPlaybackTests" */;
+			buildConfigurationList = A14C9445189FE278008F6A0D /* Build configuration list for PBXNativeTarget "PrototyperPlayerTests" */;
 			buildPhases = (
 				A14C942D189FE278008F6A0D /* Sources */,
 				A14C942E189FE278008F6A0D /* Frameworks */,
@@ -270,9 +270,9 @@
 			dependencies = (
 				A14C9437189FE278008F6A0D /* PBXTargetDependency */,
 			);
-			name = PrototyperPlaybackTests;
+			name = PrototyperPlayerTests;
 			productName = PrototyperPlaybackTests;
-			productReference = A14C9431189FE278008F6A0D /* PrototyperPlaybackTests.xctest */;
+			productReference = A14C9431189FE278008F6A0D /* PrototyperPlayerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -289,7 +289,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A14C9408189FE278008F6A0D /* Build configuration list for PBXProject "PrototyperPlayback" */;
+			buildConfigurationList = A14C9408189FE278008F6A0D /* Build configuration list for PBXProject "PrototyperPlayer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -302,8 +302,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A14C940C189FE278008F6A0D /* PrototyperPlayback */,
-				A14C9430189FE278008F6A0D /* PrototyperPlaybackTests */,
+				A14C940C189FE278008F6A0D /* PrototyperPlayer */,
+				A14C9430189FE278008F6A0D /* PrototyperPlayerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -400,7 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A14C943F189FE278008F6A0D /* PrototyperPlaybackTests.m in Sources */,
+				A14C943F189FE278008F6A0D /* PrototyperPlayerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +409,7 @@
 /* Begin PBXTargetDependency section */
 		A14C9437189FE278008F6A0D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A14C940C189FE278008F6A0D /* PrototyperPlayback */;
+			target = A14C940C189FE278008F6A0D /* PrototyperPlayer */;
 			targetProxy = A14C9436189FE278008F6A0D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -529,9 +529,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PrototyperPlayback/PrototyperPlayback-Prefix.pch";
-				INFOPLIST_FILE = "PrototyperPlayback/PrototyperPlayback-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "PrototyperPlayer/PrototyperPlayer-Prefix.pch";
+				INFOPLIST_FILE = "PrototyperPlayer/PrototyperPlayer-Info.plist";
+				PRODUCT_NAME = PrototyperPlayer;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -543,9 +543,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PrototyperPlayback/PrototyperPlayback-Prefix.pch";
-				INFOPLIST_FILE = "PrototyperPlayback/PrototyperPlayback-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "PrototyperPlayer/PrototyperPlayer-Prefix.pch";
+				INFOPLIST_FILE = "PrototyperPlayer/PrototyperPlayer-Info.plist";
+				PRODUCT_NAME = PrototyperPlayer;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -565,8 +565,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "PrototyperPlaybackTests/PrototyperPlaybackTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "PrototyperPlaybackTests/PrototyperPlayerTests-Info.plist";
+				PRODUCT_NAME = PrototyperPlayerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -583,8 +583,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrototyperPlayback/PrototyperPlayback-Prefix.pch";
-				INFOPLIST_FILE = "PrototyperPlaybackTests/PrototyperPlaybackTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "PrototyperPlaybackTests/PrototyperPlayerTests-Info.plist";
+				PRODUCT_NAME = PrototyperPlayerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -593,7 +593,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A14C9408189FE278008F6A0D /* Build configuration list for PBXProject "PrototyperPlayback" */ = {
+		A14C9408189FE278008F6A0D /* Build configuration list for PBXProject "PrototyperPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A14C9440189FE278008F6A0D /* Debug */,
@@ -602,7 +602,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A14C9442189FE278008F6A0D /* Build configuration list for PBXNativeTarget "PrototyperPlayback" */ = {
+		A14C9442189FE278008F6A0D /* Build configuration list for PBXNativeTarget "PrototyperPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A14C9443189FE278008F6A0D /* Debug */,
@@ -611,7 +611,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A14C9445189FE278008F6A0D /* Build configuration list for PBXNativeTarget "PrototyperPlaybackTests" */ = {
+		A14C9445189FE278008F6A0D /* Build configuration list for PBXNativeTarget "PrototyperPlayerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A14C9446189FE278008F6A0D /* Debug */,

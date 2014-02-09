@@ -1,6 +1,6 @@
 //
-//  PrototyperPlaybackTests.m
-//  PrototyperPlaybackTests
+//  PrototyperPlayerTests.m
+//  PrototyperPlayerTests
 //
 //  Created by Andy Qua on 03/02/2014.
 //  Copyright (c) 2014 Andy Qua. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface PrototyperPlaybackTests : XCTestCase
+@interface PrototyperPlayerTests : XCTestCase
 
 @end
 
-@implementation PrototyperPlaybackTests
+@implementation PrototyperPlayerTests
 
 - (void)setUp
 {
