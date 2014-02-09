@@ -60,14 +60,15 @@ linkedToId - The name of the image that will be linked to when tapped on the hot
 transition - the transition to use when switching to the image
 
 Transitions available are:
-0 - No transition (just display image)
-1 - Crossfade
-2 - Slide in from left,
-3 - Slide in From right,
-4 - Slide out from left,
-5 - Slide out from right,
-6 - Push to left,
-7 - Push to right
+
+0. No transition (just display image)
+1. Crossfade
+2. Slide in from left,
+3. Slide in From right,
+4. Slide out from left,
+5. Slide out from right,
+6. Push to left,
+7. Push to right
 
 ##License##
 
