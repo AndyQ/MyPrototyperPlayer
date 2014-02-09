@@ -535,6 +535,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrototyperPlayer/PrototyperPlayer-Prefix.pch";
 				INFOPLIST_FILE = "PrototyperPlayer/PrototyperPlayer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = PrototyperPlayer;
 				WRAPPER_EXTENSION = app;
 			};
@@ -549,6 +550,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrototyperPlayer/PrototyperPlayer-Prefix.pch";
 				INFOPLIST_FILE = "PrototyperPlayer/PrototyperPlayer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = PrototyperPlayer;
 				WRAPPER_EXTENSION = app;
 			};
