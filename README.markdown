@@ -14,6 +14,7 @@ The name of the zip file is also the name of the displayed project.
 A sample project.json file is shown below:
 
 ### Sample project.json
+```
 {
   "projectName" : "demo",
   "startImage" : "Image1",
@@ -40,6 +41,7 @@ A sample project.json file is shown below:
     }
   ]
 }
+```
 
 ### project.json format
 - Note all image names are without extension as the app first tries to load a .jpg and then a .png if the jpg doesn't exist.
