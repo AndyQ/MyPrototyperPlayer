@@ -24,8 +24,7 @@
 
 + (NSString *) getDocsDir
 {
-    NSURL *docsUrl = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
-                                                             inDomains:NSUserDomainMask] lastObject];
+    NSURL *docsUrl = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     
     NSString *path = [docsUrl.path stringByAppendingPathComponent:@"Projects"];
     return path;
@@ -67,10 +66,10 @@
 }
 
 
-+ (bool) importProjectArchiveFromURL:(NSURL *)url error:(NSError **)error
++ (bool) importProjectArchiveFromURL:(NSURL *)url
 {
     NSFileManager *fm = [NSFileManager defaultManager];
-    NSError *err = nil;
+    NSError *error = nil;
     NSString *projectName = [url lastPathComponent];
     NSString *file = [[Project getDocsDir] stringByAppendingPathComponent:projectName];
     NSString *projectFolder = [file stringByDeletingPathExtension];
@@ -87,17 +86,17 @@
     }
     projectName = [projectFolder lastPathComponent];
     
-    [fm createDirectoryAtPath:projectFolder withIntermediateDirectories:YES attributes:nil error:&err];
+    [fm createDirectoryAtPath:projectFolder withIntermediateDirectories:YES attributes:nil error:&error];
     
     if ( valid )
     {
         // There may already be an old zip file in this location (there shouldn't be but just in case)
         // so we remove it first as the copy will fail if one does exist.
         [fm removeItemAtPath:file error:nil];
-        [fm copyItemAtURL:url toURL:[NSURL fileURLWithPath:file] error:&err];
+        [fm copyItemAtURL:url toURL:[NSURL fileURLWithPath:file] error:&error];
         if ( error != nil )
         {
-            NSLog( @"Error - %@", err.localizedDescription );
+            NSLog( @"Error - %@", error.localizedDescription );
             // Error - go no futher
             errorMsg = @"Unable to save file";
             valid = NO;
@@ -132,16 +131,16 @@
     }
     
     // remove zip file
-    err = nil;
-    [fm removeItemAtPath:file error:&err];
+    [fm removeItemAtPath:file error:&error];
     
     if ( !valid )
     {
-        err = nil;
-        [fm removeItemAtPath:projectFolder error:&err];
+        error = nil;
+        [fm removeItemAtPath:projectFolder error:&error];
         
-        *error = [NSError errorWithDomain:@"PrototyperPlayer" code:-1 userInfo:@{NSLocalizedDescriptionKey : errorMsg}];
-
+        // Error - go no futher
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Problem" message:errorMsg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [av show];
         return NO;
     }
     
@@ -180,17 +179,16 @@
             NSError *err = nil;
             [self load:&err];
             if ( err )
+            {
                 NSLog( @"Error loading project - %@", err.localizedDescription );
-            
-            [self setupProjectPaths];
+            }
+            else
+                [self setupProjectPaths];
             
             // Little hack temporarily to assign unknown project types to the device we are running on
             if ( _projectType == 0 )
                 _projectType = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? PT_IPAD : PT_IPHONE;
         }
-        
-        
-        
     }
     return self;
 }
@@ -231,7 +229,6 @@
     if ( self.startImage.length == 0 )
         self.startImage = guid;
     
-    
     NSString *imageType = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_IMAGE_FORMAT];
     NSString *imageName = [NSString stringWithFormat:@"%@.%@", guid, imageType];
     NSString *imagePath = [[self getProjectFolder] stringByAppendingPathComponent:imageName];
@@ -261,7 +258,14 @@
     ImageDetails *item = [ImageDetails new];
     item.imageName = [imageName stringByDeletingPathExtension];
     item.imagePath = imagePath;
-    [_images addObject:item];
+    [self.images addObject:item];
+    
+    // If first image then set the start image
+    if ( self.startImage.length == 0 )
+    {
+        self.startImage = item.imageName;
+    }
+    
     
     // Save Project
     NSError *err = nil;
@@ -272,7 +276,7 @@
 
 - (void) removeItem:(ImageDetails *)item;
 {
-    [_images removeObject:item];
+    [self.images removeObject:item];
     
     NSString *path = item.imagePath;
     
@@ -288,6 +292,11 @@
             if ( [link.linkedToId isEqualToString:item.imageName] )
                 link.linkedToId = nil;
         }
+    }
+    
+    if ( self.images.count == 0 )
+    {
+        self.startImage = @"";
     }
     
     err = nil;
@@ -392,6 +401,9 @@
         }
     }
     
+    if ( self.startImage.length == 0 && self.images.count > 0 )
+        self.startImage = ((ImageDetails *)self.images[0]).imageName;
+    
     NSError *err = nil;
     [self save:&err];
     if ( err != nil )
@@ -437,6 +449,9 @@
 - (bool) save:(NSError **)error
 {
     NSMutableDictionary *proj = [NSMutableDictionary dictionary];
+    if ( self.startImage == nil )
+        self.startImage = @"";
+    
     proj[@"startImage"] = self.startImage;
     NSMutableArray *images = [NSMutableArray array];
     proj[@"images"] = images;
