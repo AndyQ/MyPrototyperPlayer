@@ -80,17 +80,68 @@
 }
 
 
-
 -( IBAction) addProjectPressed:(id)sender
 {
-    
+/*
+    // Display new window showing asking user to import project
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Import project" message:@"Enter URL of project to import" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    av.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [av textFieldAtIndex:0].text = @"http://";
+    [av show];
+*/
 }
 
 -( IBAction) actionPressed:(id)sender
 {
-    NSArray *items = @[@"Delete projects", @"Settings"];
+    NSArray *items = @[@"Delete projects", @"Settings", @"Add demo project"];
     popoverView = [PopoverView showPopoverAtPoint:CGPointMake( self.view.frame.size.width - 20, 0) inView:self.view withStringArray:items delegate:self];
 }
+
+
+#pragma mark - UIAlertViewDelegate methods
+- (BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView
+{
+    NSString *inputText = [[alertView textFieldAtIndex:0] text];
+    if ( inputText.length <= 7 )
+        return NO;
+    
+    NSURL *url = [NSURL URLWithString:inputText];
+    if ( url == nil )
+        return NO;
+    
+    return YES;
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ( buttonIndex == 1 )
+    {
+        NSString *text = [alertView textFieldAtIndex:0].text;
+        NSURL *url = [NSURL URLWithString:text];
+
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+        dispatch_async(queue, ^{
+            __block NSError *err = nil;
+            
+            
+            
+            [Project importProjectArchiveFromURL:url error:&err];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                if ( err )
+                {
+                    // Error - go no futher
+                    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Problem" message:err.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    [av show];
+                }
+                
+                [self loadProjects];
+                [self.tableView reloadData];
+            });
+        });
+    }
+}
+
 
 #pragma mark - PopoverView delegate
 
@@ -103,7 +154,7 @@
         self.navigationItem.rightBarButtonItem = doneButton;
         self.addButton.enabled = NO;
     }
-    if ( [text isEqualToString:@"Settings"] )
+    else if ( [text isEqualToString:@"Settings"] )
     {
         IASKAppSettingsViewController *appSettingsViewController = [[IASKAppSettingsViewController alloc] init];
         appSettingsViewController.delegate = self;
@@ -123,7 +174,15 @@
             [self.navigationController pushViewController:appSettingsViewController animated:YES];
         }
     }
+    else if ( [text isEqualToString:@"Add demo project"] )
+    {
+        // Copy over demo file into place
+        NSURL *url = [[NSBundle mainBundle] URLForResource:@"demo" withExtension:@"zip"];
+        [Project importProjectArchiveFromURL:url error:nil];
 
+        [self loadProjects];
+        [self.tableView reloadData];
+    }
     [popoverView dismiss];
     popoverView = nil;
     
@@ -144,28 +203,6 @@
     self.addButton.enabled = YES;
 }
 
-#pragma mark - UIAlertViewDelegate methods
-- (BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView
-{
-    NSString *inputText = [[alertView textFieldAtIndex:0] text];
-    if ( [projects containsObject:inputText] || inputText.length == 0 )
-        return NO;
-    
-    return YES;
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if ( buttonIndex == 1 )
-    {
-        NSString *name = [alertView textFieldAtIndex:0].text;
-        
-        Project *p = [[Project alloc] init];
-        p.projectName = name;
-        [projects addObject:p];
-        [self.tableView reloadData];
-    }
-}
 #pragma mark - Load projects
 - (void) loadProjects
 {

@@ -20,8 +20,15 @@
 {
     if (url != nil && [url isFileURL])
     {
-        [Project importProjectArchiveFromURL:url];
-        
+        NSError *err = nil;
+        [Project importProjectArchiveFromURL:url error:&err];
+        if ( err )
+        {
+            // Error - go no futher
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Problem" message:err.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [av show];
+        }
+
         // Remove all stored files in Inbox folder
         NSFileManager *fm = [NSFileManager defaultManager];
         NSURL *docsUrl = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
@@ -48,7 +55,7 @@
         
         // Copy over demo file into place
         NSURL *url = [[NSBundle mainBundle] URLForResource:@"demo" withExtension:@"zip"];
-        [Project importProjectArchiveFromURL:url];
+        [Project importProjectArchiveFromURL:url error:nil];
     }
     
     return YES;
