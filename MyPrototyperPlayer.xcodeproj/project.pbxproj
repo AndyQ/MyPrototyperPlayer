@@ -47,20 +47,20 @@
 /* Begin PBXFileReference section */
 		21FBA33CC0164B4CA066B576 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7758088FE73F4464AE08E16A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		A14C940D189FE278008F6A0D /* PrototyperPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrototyperPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A14C940D189FE278008F6A0D /* MyPrototyperPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPrototyperPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14C9410189FE278008F6A0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A14C9412189FE278008F6A0D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A14C9414189FE278008F6A0D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		A14C9418189FE278008F6A0D /* PrototyperPlayer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrototyperPlayer-Info.plist"; sourceTree = "<group>"; };
+		A14C9418189FE278008F6A0D /* MyPrototyperPlayer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyPrototyperPlayer-Info.plist"; sourceTree = "<group>"; };
 		A14C941A189FE278008F6A0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A14C941C189FE278008F6A0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A14C941E189FE278008F6A0D /* PrototyperPlayer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrototyperPlayer-Prefix.pch"; sourceTree = "<group>"; };
+		A14C941E189FE278008F6A0D /* MyPrototyperPlayer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyPrototyperPlayer-Prefix.pch"; sourceTree = "<group>"; };
 		A14C941F189FE278008F6A0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A14C9420189FE278008F6A0D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A14C9423189FE278008F6A0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		A14C9426189FE278008F6A0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		A14C942B189FE278008F6A0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A14C9431189FE278008F6A0D /* PrototyperPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrototyperPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A14C9431189FE278008F6A0D /* MyPrototyperPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPrototyperPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14C9432189FE278008F6A0D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A14C943A189FE278008F6A0D /* PrototyperPlayerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrototyperPlayerTests-Info.plist"; sourceTree = "<group>"; };
 		A14C943C189FE278008F6A0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -114,8 +114,8 @@
 		A14C9404189FE278008F6A0D = {
 			isa = PBXGroup;
 			children = (
-				A14C9416189FE278008F6A0D /* PrototyperPlayer */,
-				A14C9438189FE278008F6A0D /* PrototyperPlayerTests */,
+				A14C9416189FE278008F6A0D /* MyPrototyperPlayer */,
+				A14C9438189FE278008F6A0D /* MyPrototyperPlayerTests */,
 				A14C940F189FE278008F6A0D /* Frameworks */,
 				A14C940E189FE278008F6A0D /* Products */,
 				7758088FE73F4464AE08E16A /* Pods.xcconfig */,
@@ -125,8 +125,8 @@
 		A14C940E189FE278008F6A0D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A14C940D189FE278008F6A0D /* PrototyperPlayer.app */,
-				A14C9431189FE278008F6A0D /* PrototyperPlayerTests.xctest */,
+				A14C940D189FE278008F6A0D /* MyPrototyperPlayer.app */,
+				A14C9431189FE278008F6A0D /* MyPrototyperPlayerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,7 +143,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A14C9416189FE278008F6A0D /* PrototyperPlayer */ = {
+		A14C9416189FE278008F6A0D /* MyPrototyperPlayer */ = {
 			isa = PBXGroup;
 			children = (
 				A14C9449189FE3A7008F6A0D /* cells */,
@@ -158,7 +158,7 @@
 				A14C942B189FE278008F6A0D /* Images.xcassets */,
 				A14C9417189FE278008F6A0D /* Supporting Files */,
 			);
-			path = PrototyperPlayer;
+			path = MyPrototyperPlayer;
 			sourceTree = "<group>";
 		};
 		A14C9417189FE278008F6A0D /* Supporting Files */ = {
@@ -166,21 +166,21 @@
 			children = (
 				A1CC97C418A813D800816C03 /* demo.zip */,
 				A14C946818A14235008F6A0D /* Settings.bundle */,
-				A14C9418189FE278008F6A0D /* PrototyperPlayer-Info.plist */,
+				A14C9418189FE278008F6A0D /* MyPrototyperPlayer-Info.plist */,
 				A14C9419189FE278008F6A0D /* InfoPlist.strings */,
 				A14C941C189FE278008F6A0D /* main.m */,
-				A14C941E189FE278008F6A0D /* PrototyperPlayer-Prefix.pch */,
+				A14C941E189FE278008F6A0D /* MyPrototyperPlayer-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A14C9438189FE278008F6A0D /* PrototyperPlayerTests */ = {
+		A14C9438189FE278008F6A0D /* MyPrototyperPlayerTests */ = {
 			isa = PBXGroup;
 			children = (
 				A14C943E189FE278008F6A0D /* PrototyperPlayerTests.m */,
 				A14C9439189FE278008F6A0D /* Supporting Files */,
 			);
-			path = PrototyperPlayerTests;
+			path = MyPrototyperPlayerTests;
 			sourceTree = "<group>";
 		};
 		A14C9439189FE278008F6A0D /* Supporting Files */ = {
@@ -240,9 +240,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A14C940C189FE278008F6A0D /* PrototyperPlayer */ = {
+		A14C940C189FE278008F6A0D /* MyPrototyperPlayer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A14C9442189FE278008F6A0D /* Build configuration list for PBXNativeTarget "PrototyperPlayer" */;
+			buildConfigurationList = A14C9442189FE278008F6A0D /* Build configuration list for PBXNativeTarget "MyPrototyperPlayer" */;
 			buildPhases = (
 				91957DFB361D45BD9AA757CB /* Check Pods Manifest.lock */,
 				A14C946A18A14292008F6A0D /* ShellScript */,
@@ -255,14 +255,14 @@
 			);
 			dependencies = (
 			);
-			name = PrototyperPlayer;
+			name = MyPrototyperPlayer;
 			productName = PrototyperPlayback;
-			productReference = A14C940D189FE278008F6A0D /* PrototyperPlayer.app */;
+			productReference = A14C940D189FE278008F6A0D /* MyPrototyperPlayer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A14C9430189FE278008F6A0D /* PrototyperPlayerTests */ = {
+		A14C9430189FE278008F6A0D /* MyPrototyperPlayerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A14C9445189FE278008F6A0D /* Build configuration list for PBXNativeTarget "PrototyperPlayerTests" */;
+			buildConfigurationList = A14C9445189FE278008F6A0D /* Build configuration list for PBXNativeTarget "MyPrototyperPlayerTests" */;
 			buildPhases = (
 				A14C942D189FE278008F6A0D /* Sources */,
 				A14C942E189FE278008F6A0D /* Frameworks */,
@@ -273,9 +273,9 @@
 			dependencies = (
 				A14C9437189FE278008F6A0D /* PBXTargetDependency */,
 			);
-			name = PrototyperPlayerTests;
+			name = MyPrototyperPlayerTests;
 			productName = PrototyperPlaybackTests;
-			productReference = A14C9431189FE278008F6A0D /* PrototyperPlayerTests.xctest */;
+			productReference = A14C9431189FE278008F6A0D /* MyPrototyperPlayerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -292,7 +292,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A14C9408189FE278008F6A0D /* Build configuration list for PBXProject "PrototyperPlayer" */;
+			buildConfigurationList = A14C9408189FE278008F6A0D /* Build configuration list for PBXProject "MyPrototyperPlayer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -305,8 +305,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A14C940C189FE278008F6A0D /* PrototyperPlayer */,
-				A14C9430189FE278008F6A0D /* PrototyperPlayerTests */,
+				A14C940C189FE278008F6A0D /* MyPrototyperPlayer */,
+				A14C9430189FE278008F6A0D /* MyPrototyperPlayerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -377,7 +377,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "plist=\"$SRCROOT/PrototyperPlayback/PrototyperPlayback-Info.plist\"\necho $plist\nversion=`/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"$plist\"`\n#build=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$plist\"`\nbuild=`git rev-list --count HEAD`\n\n#update build number\necho \"OldBuild - $build\"\nbuild=$((${build} + 1))\necho \"NewBuild - $build\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build\" \"$plist\"\n\nstringsFile=\"$SRCROOT/Settings.bundle/en.lproj/Root.strings\"\necho \"\\\"author\\\" = \\\"PrototyperPlayback Version ${version} (${build})\" > $stringsFile\necho \"Written by Andy Qua\\\";\" >> $stringsFile\ntouch \"$SRCROOT/Settings.bundle\"\n";
+			shellScript = "plist=\"$SRCROOT/MyPrototyperPlayer/MyPrototyperPlayer-Info.plist\"\necho $plist\nversion=`/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"$plist\"`\nbuild=`git rev-list --count HEAD`\n\n#update build number\necho \"OldBuild - $build\"\nbuild=$((${build} + 1))\necho \"NewBuild - $build\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build\" \"$plist\"\n\nstringsFile=\"$SRCROOT/Settings.bundle/en.lproj/Root.strings\"\necho \"\\\"author\\\" = \\\"MyPrototyperPlayer Version ${version} (${build})\" > $stringsFile\necho \"Written by Andy Qua\\\";\" >> $stringsFile\ntouch \"$SRCROOT/Settings.bundle\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -413,7 +413,7 @@
 /* Begin PBXTargetDependency section */
 		A14C9437189FE278008F6A0D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A14C940C189FE278008F6A0D /* PrototyperPlayer */;
+			target = A14C940C189FE278008F6A0D /* MyPrototyperPlayer */;
 			targetProxy = A14C9436189FE278008F6A0D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -533,10 +533,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PrototyperPlayer/PrototyperPlayer-Prefix.pch";
-				INFOPLIST_FILE = "PrototyperPlayer/PrototyperPlayer-Info.plist";
+				GCC_PREFIX_HEADER = "MyPrototyperPlayer/MyPrototyperPlayer-Prefix.pch";
+				INFOPLIST_FILE = "MyPrototyperPlayer/MyPrototyperPlayer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = PrototyperPlayer;
+				PRODUCT_NAME = MyPrototyperPlayer;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -548,10 +548,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PrototyperPlayer/PrototyperPlayer-Prefix.pch";
-				INFOPLIST_FILE = "PrototyperPlayer/PrototyperPlayer-Info.plist";
+				GCC_PREFIX_HEADER = "MyPrototyperPlayer/MyPrototyperPlayer-Prefix.pch";
+				INFOPLIST_FILE = "MyPrototyperPlayer/MyPrototyperPlayer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = PrototyperPlayer;
+				PRODUCT_NAME = MyPrototyperPlayer;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -572,7 +572,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "PrototyperPlaybackTests/PrototyperPlayerTests-Info.plist";
-				PRODUCT_NAME = PrototyperPlayerTests;
+				PRODUCT_NAME = MyPrototyperPlayerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -590,7 +590,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrototyperPlayback/PrototyperPlayback-Prefix.pch";
 				INFOPLIST_FILE = "PrototyperPlaybackTests/PrototyperPlayerTests-Info.plist";
-				PRODUCT_NAME = PrototyperPlayerTests;
+				PRODUCT_NAME = MyPrototyperPlayerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -599,7 +599,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A14C9408189FE278008F6A0D /* Build configuration list for PBXProject "PrototyperPlayer" */ = {
+		A14C9408189FE278008F6A0D /* Build configuration list for PBXProject "MyPrototyperPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A14C9440189FE278008F6A0D /* Debug */,
@@ -608,7 +608,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A14C9442189FE278008F6A0D /* Build configuration list for PBXNativeTarget "PrototyperPlayer" */ = {
+		A14C9442189FE278008F6A0D /* Build configuration list for PBXNativeTarget "MyPrototyperPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A14C9443189FE278008F6A0D /* Debug */,
@@ -617,7 +617,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A14C9445189FE278008F6A0D /* Build configuration list for PBXNativeTarget "PrototyperPlayerTests" */ = {
+		A14C9445189FE278008F6A0D /* Build configuration list for PBXNativeTarget "MyPrototyperPlayerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A14C9446189FE278008F6A0D /* Debug */,
