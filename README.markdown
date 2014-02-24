@@ -1,13 +1,13 @@
-#PrototyperPlayback
+#MyPrototyperPlayer
 
-PrototyperPlayback is the player only companian app for running interfaces created with Prototyper. This app is designed to demo the playback only component and has no editor functionality.
+MyPrototyperPlayer is the player only companian app for running interfaces created with MyPrototyper. This app is designed to demo the playback only component and has no editor functionality.
 
 When running, you can navigate through your prototype design by tapping on the hotspots.
 
-PrototyperPlayback is released under the MIT licence.
+MyPrototyperPlayer is released under the MIT licence.
 
-##Prototyper project format##
-An exported Prototyper project is a zip file containing a bunch of images and a **project.json** file that describes the project, what images it contains, the hotspots defined on each image and where it links to.
+##MyPrototyper project format##
+An exported MyPrototyper project is a zip file containing a bunch of images and a **project.json** file that describes the project, what images it contains, the hotspots defined on each image and where it links to.
 
 The name of the zip file is also the name of the displayed project.
 
