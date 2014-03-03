@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5051" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="AYO-nh-5ZB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5051" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="AYO-nh-5ZB">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.3006597741" green="0.54180345900000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="KCz-Hw-6wD" secondAttribute="centerX" id="Fgb-hg-JxL"/>
                             <constraint firstAttribute="centerY" secondItem="KCz-Hw-6wD" secondAttribute="centerY" id="JSc-TY-F9p"/>
@@ -70,61 +70,70 @@
                         <viewControllerLayoutGuide type="top" id="Rvc-gR-xxx"/>
                         <viewControllerLayoutGuide type="bottom" id="32Z-5E-hEQ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qUz-9l-CF3">
+                    <view key="view" contentMode="scaleToFill" id="dDH-m2-A4E">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="URi-TZ-QFp">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qVR-mm-csw">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Bup-QJ-kHT" customClass="ProjectSelectTableViewCell">
-                                        <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                <color key="backgroundColor" red="0.3006597741" green="0.54180345900000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="15" id="Xzz-Xw-fUX">
+                                    <size key="itemSize" width="194" height="51"/>
+                                    <size key="headerReferenceSize" width="0.0" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="40" minY="10" maxX="40" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemCell" id="wrL-MG-pZG" userLabel="Item Cell - ItemCell" customClass="ItemCell">
+                                        <rect key="frame" x="40" y="60" width="195" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bup-QJ-kHT" id="a5f-Ql-mbN">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="195" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhK-vQ-hGb">
-                                                    <rect key="frame" x="20" y="11" width="655" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHc-RX-zeh">
+                                                    <rect key="frame" x="8" y="15" width="179" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                        </tableViewCellContentView>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="BHc-RX-zeh" firstAttribute="leading" secondItem="wrL-MG-pZG" secondAttribute="leading" constant="8" id="MqK-9t-eKs"/>
+                                            <constraint firstAttribute="centerX" secondItem="BHc-RX-zeh" secondAttribute="centerX" id="SAs-Wt-gSO"/>
+                                            <constraint firstAttribute="centerY" secondItem="BHc-RX-zeh" secondAttribute="centerY" constant="-0.5" id="cwl-3B-q04"/>
+                                        </constraints>
+                                        <size key="customSize" width="195" height="50"/>
                                         <connections>
-                                            <outlet property="projectName" destination="qhK-vQ-hGb" id="zX0-MB-UkI"/>
+                                            <outlet property="label" destination="BHc-RX-zeh" id="1GH-7P-0Ph"/>
                                         </connections>
-                                    </tableViewCell>
-                                </prototypes>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="fyC-GM-bjD">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
                                 <connections>
-                                    <outlet property="dataSource" destination="G6S-dl-PnF" id="fMj-8Q-MNO"/>
-                                    <outlet property="delegate" destination="G6S-dl-PnF" id="dIY-gf-9pA"/>
+                                    <outlet property="dataSource" destination="G6S-dl-PnF" id="EV4-zc-gWb"/>
+                                    <outlet property="delegate" destination="G6S-dl-PnF" id="qVh-qQ-fzc"/>
                                 </connections>
-                            </tableView>
+                            </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.039215686270000001" green="0.094117647060000004" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="URi-TZ-QFp" firstAttribute="leading" secondItem="qUz-9l-CF3" secondAttribute="leading" id="08F-X1-eh0"/>
-                            <constraint firstAttribute="trailing" secondItem="URi-TZ-QFp" secondAttribute="trailing" id="MrH-Cd-zGe"/>
-                            <constraint firstItem="32Z-5E-hEQ" firstAttribute="top" secondItem="URi-TZ-QFp" secondAttribute="bottom" id="P8h-NB-Sn6"/>
-                            <constraint firstItem="URi-TZ-QFp" firstAttribute="top" secondItem="Rvc-gR-xxx" secondAttribute="bottom" id="VVN-rv-th9"/>
+                            <constraint firstItem="32Z-5E-hEQ" firstAttribute="top" secondItem="qVR-mm-csw" secondAttribute="bottom" id="4ib-f5-Qhq"/>
+                            <constraint firstItem="qVR-mm-csw" firstAttribute="top" secondItem="Rvc-gR-xxx" secondAttribute="bottom" id="KQY-nf-h4t"/>
+                            <constraint firstAttribute="trailing" secondItem="qVR-mm-csw" secondAttribute="trailing" id="c6Z-Tl-FUP"/>
+                            <constraint firstItem="qVR-mm-csw" firstAttribute="leading" secondItem="dDH-m2-A4E" secondAttribute="leading" id="hoj-jw-zjD"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Prototyper Player" id="RMa-ZN-PXF">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="ywm-L5-Abl">
-                            <connections>
-                                <action selector="addProjectPressed:" destination="G6S-dl-PnF" id="Y70-UL-AId"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Prototyper Player" id="RMa-ZN-PXF"/>
                     <connections>
-                        <outlet property="addButton" destination="ywm-L5-Abl" id="Mch-2X-mQo"/>
-                        <outlet property="tableView" destination="URi-TZ-QFp" id="gzO-8N-Jg2"/>
+                        <outlet property="collectionView" destination="qVR-mm-csw" id="Fy6-po-DeM"/>
                         <segue destination="PgB-fZ-kBS" kind="push" identifier="PlayProject" id="Nr0-2U-JdB"/>
                     </connections>
                 </viewController>

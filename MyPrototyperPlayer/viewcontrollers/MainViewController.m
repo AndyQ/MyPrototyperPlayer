@@ -8,46 +8,42 @@
 
 #import "MainViewController.h"
 #import "Project.h"
-#import "ProjectSelectTableViewCell.h"
+#import "ItemCell.h"
 #import "PopoverView.h"
 #import "PlaybackViewController.h"
+
 #import "Constants.h"
 
 #import "IASKAppSettingsViewController.h"
 
-@interface MainViewController () <IASKSettingsDelegate, PopoverViewDelegate, UIAlertViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface MainViewController () <IASKSettingsDelegate, PopoverViewDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 {
     PopoverView *popoverView;
-
+    
     NSMutableArray *projects;
     NSString *selectedProjectName;
     
     UIBarButtonItem *actionButton;
     UIBarButtonItem *doneButton;
+    UIBarButtonItem *deleteButton;
+    
+    bool editMode;
 }
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
+@property(nonatomic, weak) IBOutlet UICollectionView *collectionView;
 
 @end
 
 @implementation MainViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    [super viewDidLoad];\
     
     actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionPressed:)];
-    doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(donePressed:)];
+    doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(deleteProjectsPressed:)];
+    deleteButton = [[UIBarButtonItem alloc] initWithTitle:@"Delete" style:UIBarButtonItemStylePlain target:self action:@selector(deletePressed:)];
+    
     self.navigationItem.rightBarButtonItem = actionButton;
 }
 
@@ -55,9 +51,9 @@
 {
     // Register for import notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadProjects) name:NOTIF_IMPORTED object:nil];
-
+    
     [self loadProjects];
-    [self.tableView reloadData];
+    [self.collectionView reloadData];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -80,68 +76,41 @@
 }
 
 
--( IBAction) addProjectPressed:(id)sender
+
+- (void) deleteProjectsPressed:(id)sender
 {
-/*
-    // Display new window showing asking user to import project
-    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Import project" message:@"Enter URL of project to import" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    editMode = !editMode;
+    if ( editMode )
+    {
+        self.navigationItem.leftBarButtonItem = doneButton;
+        self.navigationItem.rightBarButtonItem = deleteButton;
+        
+        self.collectionView.allowsMultipleSelection = YES;
+    }
+    else
+    {
+        self.navigationItem.leftBarButtonItem = nil;
+        self.navigationItem.rightBarButtonItem = actionButton;
+        self.collectionView.allowsMultipleSelection = NO;
+        
+        [self.collectionView reloadData];
+    }
+}
+
+
+- (IBAction) addProjectPressed:(id)sender
+{
+    // prompt for name
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Enter project name" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
     av.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [av textFieldAtIndex:0].text = @"http://";
     [av show];
-*/
 }
 
 -( IBAction) actionPressed:(id)sender
 {
     NSArray *items = @[@"Delete projects", @"Settings", @"Add demo project"];
-    popoverView = [PopoverView showPopoverAtPoint:CGPointMake( self.view.frame.size.width - 20, 0) inView:self.view withStringArray:items delegate:self];
+    popoverView = [PopoverView showPopoverAtPoint:CGPointMake( self.view.frame.size.width - 20, 0) inView:self.view withTitle:@"Action" withStringArray:items delegate:self];
 }
-
-
-#pragma mark - UIAlertViewDelegate methods
-- (BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView
-{
-    NSString *inputText = [[alertView textFieldAtIndex:0] text];
-    if ( inputText.length <= 7 )
-        return NO;
-    
-    NSURL *url = [NSURL URLWithString:inputText];
-    if ( url == nil )
-        return NO;
-    
-    return YES;
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if ( buttonIndex == 1 )
-    {
-        NSString *text = [alertView textFieldAtIndex:0].text;
-        NSURL *url = [NSURL URLWithString:text];
-
-        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
-        dispatch_async(queue, ^{
-            __block NSError *err = nil;
-            
-            
-            
-            [Project importProjectArchiveFromURL:url error:&err];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                if ( err )
-                {
-                    // Error - go no futher
-                    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Problem" message:err.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                    [av show];
-                }
-                
-                [self loadProjects];
-                [self.tableView reloadData];
-            });
-        });
-    }
-}
-
 
 #pragma mark - PopoverView delegate
 
@@ -149,10 +118,7 @@
 {
     if ( [text isEqualToString:@"Delete projects"] )
     {
-        self.tableView.editing = YES;
-        [self.tableView reloadData];
-        self.navigationItem.rightBarButtonItem = doneButton;
-        self.addButton.enabled = NO;
+        [self deleteProjectsPressed:nil];
     }
     else if ( [text isEqualToString:@"Settings"] )
     {
@@ -165,7 +131,7 @@
             UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:appSettingsViewController];
             nc.modalPresentationStyle = UIModalPresentationFormSheet;
             nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        
+            
             [self presentViewController:nc animated:YES completion:^{ }];
         }
         else
@@ -179,10 +145,11 @@
         // Copy over demo file into place
         NSURL *url = [[NSBundle mainBundle] URLForResource:@"demo" withExtension:@"zip"];
         [Project importProjectArchiveFromURL:url error:nil];
-
+        
         [self loadProjects];
-        [self.tableView reloadData];
+        [self.collectionView reloadData];
     }
+    
     [popoverView dismiss];
     popoverView = nil;
     
@@ -196,13 +163,35 @@
 
 - (void) donePressed:(id)sender
 {
-    self.tableView.editing = NO;
-    [self.tableView reloadData];
-
+    editMode = NO;
+    [self.collectionView reloadData];
+    
+    self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.rightBarButtonItem = actionButton;
-    self.addButton.enabled = YES;
 }
 
+#pragma mark - UIAlertViewDelegate methods
+- (BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView
+{
+    NSString *inputText = [[alertView textFieldAtIndex:0] text];
+    if ( [projects containsObject:inputText] || inputText.length == 0 )
+        return NO;
+    
+    return YES;
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ( buttonIndex == 1 )
+    {
+        NSString *name = [alertView textFieldAtIndex:0].text;
+        
+        Project *p = [[Project alloc] init];
+        p.projectName = name;
+        [projects addObject:p];
+        [self.collectionView reloadData];
+    }
+}
 #pragma mark - Load projects
 - (void) loadProjects
 {
@@ -216,13 +205,15 @@
         BOOL isDir = NO;
         if (![file hasPrefix:@"."] && [fm fileExistsAtPath:path isDirectory:&isDir] && isDir)
         {
+            //            ProjectType projectType = [Project getProjectTypeForProject:file];
             Project *p = [[Project alloc] init];
             p.projectName = file;
+            //            p.projectType = projectType;
             [projects addObject:p];
         }
     }
     
-    [self.tableView reloadData];
+    [self.collectionView reloadData];
 }
 
 #pragma mark - Navigation
@@ -239,53 +230,86 @@
 }
 
 
+#pragma mark - collection view data source
 
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return projects.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    ProjectSelectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    ItemCell *cell = (ItemCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"ItemCell" forIndexPath:indexPath];
     
     Project *project = projects[indexPath.row];
-    cell.projectName.text = project.projectName;
-
+    cell.label.text = project.projectName;
+    cell.backgroundColor = [UIColor clearColor];
+    
     return cell;
 }
 
-
-#pragma mark - UITableViewDelegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
-    Project *project = projects[indexPath.row];
-    selectedProjectName = project.projectName;
-    [self performSegueWithIdentifier:@"PlayProject" sender:self];
+    return 4;
 }
 
-- (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
-    return YES;
+    return 1;
 }
 
-- (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - collection view delegate
+
+
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ( editingStyle == UITableViewCellEditingStyleDelete )
+    if ( !editMode )
     {
         Project *project = projects[indexPath.row];
-        [Project deleteProjectWithName:project.projectName];
-        [projects removeObjectAtIndex:indexPath.row];
-        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        selectedProjectName = project.projectName;
+        [self performSegueWithIdentifier:@"PlayProject" sender:self];
+    }
+    else
+    {
+        ItemCell *cell = (ItemCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+        cell.highlight = cell.selected;
+        [cell setNeedsDisplay];
     }
 }
+
+- (void) collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ( editMode )
+    {
+        ItemCell *cell = (ItemCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+        cell.highlight = cell.selected;
+        [cell setNeedsDisplay];
+    }
+}
+
+- (void) deletePressed:(id)sender
+{
+    // Remove selected cells
+    NSArray *selectedCells = [self.collectionView indexPathsForSelectedItems];
+    
+    // Remove images from project
+    NSMutableArray *itemsToDelete = [NSMutableArray array];
+    for ( NSIndexPath *indexPath in selectedCells )
+    {
+        [itemsToDelete addObject:projects[indexPath.row]];
+    }
+    
+    for ( Project *project in itemsToDelete )
+    {
+        [Project deleteProjectWithName:project.projectName];
+        [projects removeObject:project];
+        
+    }
+    [self.collectionView deleteItemsAtIndexPaths:selectedCells];
+    
+    [self deleteProjectsPressed:nil];
+}
+
 
 #pragma mark - InAppSettingsKit Delegate
 - (void)settingsViewControllerDidEnd:(IASKAppSettingsViewController*)sender
@@ -296,3 +320,4 @@
 
 
 @end
+
